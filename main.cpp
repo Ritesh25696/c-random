@@ -7,7 +7,7 @@ private:
     string *name;
 
 public:
-    human(string iname,int a)
+    human(string iname,int ages)
     {age=new int;
     name = new string;
     *age=a;
