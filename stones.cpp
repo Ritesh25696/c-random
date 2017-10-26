@@ -49,6 +49,7 @@ void quickSort(int arr[], int low, int high)
 }
 
 int CS(int cap, int stones[] , int n){
+
 quickSort(stones , 0 ,n);
 rvereseArray(stones ,0 ,n-1);
 int st = 0 , en = n-1;
@@ -68,7 +69,7 @@ return Count;
 
 int main()
 {
-    int stones[] = {3, 2,2,1};
-    cout<<CS(6 , stones , 4);
+    int stones[] = {50, 32, 81, 63};
+    cout<<CS(90 , stones , 4);
     return 0;
 }
