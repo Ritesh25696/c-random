@@ -7,7 +7,7 @@ sort(stones , stones+n);
 reverse(stones , stones+n);
 int st = 0 , en = n-1;
 int Count = 0;
-while(st<en){
+while(st<=en){
     if(stones[st] + stones[en] <= cap){
         st++; en--; Count++;
     }
