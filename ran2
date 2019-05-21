@@ -1,0 +1,41 @@
+// C++ program to demonstrate __builtin_popcount()
+#include <bits/stdc++.h>
+using namespace std;
+
+void finalPrice(vector<int> prices){
+     stack<int> s; 
+     int res = 0;
+     s.push(0); 
+      
+
+    for (int i = 1; i < prices.size(); i++) { 
+  
+        if (s.empty()) { 
+            s.push(i); 
+            continue; 
+        } 
+ 
+        while (s.empty() == false && prices[s.top()] > prices[i]) { 
+            res += prices[s.top()] - prices[i];
+            s.pop(); 
+        } 
+  
+        s.push(i); 
+    } 
+ 
+ vector<int> Nodis;
+    while (s.empty() == false) { 
+        res += prices[s.top()];
+        Nodis.push_back(s.top());
+        s.pop(); 
+    } 
+    reverse(Nodis.begin(),Nodis.end());
+  cout<<res<<endl;
+  for(int i=0 ; i<Nodis.size(); i++)cout<<Nodis[i]<<" ";
+}
+int main() 
+{ 
+    vector<int> arr = { 5,1,3,4,6,2 }; 
+    finalPrice(arr); 
+    return 0; 
+}
